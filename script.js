@@ -1,4 +1,6 @@
+//Selectors
 let mql = window.matchMedia("(max-width: 770px)");
+let mqlBig = window.matchMedia("(min-width: 771px)");
 
 let foundationTitle = document.querySelector("#foundation");
 let par1 = document.querySelector("#firstStory");
@@ -14,6 +16,7 @@ let par3 = document.querySelector("#par3");
 
 let nodes = document.getElementsByClassName("delete");
 
+//Functions
 function change1(e) {
   if (e.matches) {
     console.log("cool");
@@ -33,3 +36,13 @@ function change1(e) {
 }
 
 mql.addEventListener("change", change1);
+
+function change2(e) {
+  if (e.matches) {
+    for (let i = 0; i < nodes.length; i++) {
+      nodes[i].style.display = "block";
+    }
+  }
+}
+
+mqlBig.addEventListener("change", change2);
